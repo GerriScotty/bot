@@ -1,7 +1,7 @@
 <?php
 
 // PARAMETRI DA MODIFICARE
-$WEBHOOK_URL = 'https://http://aldogiovanniegiacomo.altervista.org//webhook eco.php';
+$WEBHOOK_URL = 'https://gallonebot.herokuapp.com/execute.php';
 $BOT_TOKEN = '1260201015:AAEI-9jc-CEZwyhaMKWTGdSZgPipgysnErk';
 
 // NON APPORTARE MODIFICHE NEL CODICE SEGUENTE
