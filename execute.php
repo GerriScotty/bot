@@ -53,6 +53,27 @@ $menu = $menud;
     return apiRequest("sendMessage?chat_id=$chat&parse_mode=Markdown&text=$text&reply_markup=$d2");
 }
 
+if($text == "Inline"){
+    $but = array(array(array("text" => "Bottone 1", "url" => "www.google.com"),),);
+    inlineKeyboard($but, $cid, "Clicca questo pulsante per andare su google!");
+}
+
+if($text == "Inline2"){
+    $but = array(array(array("text" => "Bottone 1", "url" => "www.google.com"),array("text" => "Bottone 2", "url" => "www.facebook.it"),),);
+    inlineKeyboard($but, $cid, "Clicca uno di questi due pulsanti \nper andare su google o su facebook!");
+}
+
+if($text == "Inline3"){
+    $but[] = array(array("text" => "Bottone 1", "url" => "www.google.com"),);
+    $but[] = array(array("text" => "Bottone 2", "url" => "www.facebook.it"),);
+    inlineKeyboard($but, $cid, "Clicca uno di questi due pulsanti \nper andare su google o su facebook!");
+}
+
+if($text == "Inline4"){
+    $but = array(array(array("text" => "Bottone 1", "callback_data" => "ciao1"),),);
+    inlineKeyboard($but, $cid, "Clicca il bottone!");
+}
+
 function sendMsg($id, $msg) {
 	$token = "1260201015:AAEI-9jc-CEZwyhaMKWTGdSZgPipgysnErk";
 
