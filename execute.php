@@ -30,7 +30,7 @@ header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $text);
 
 $parameters["method"] = "sendMessage";
-$keyboard = ['inline_keyboard' => [[['text' =>  'myText', 'callback_data' => 'myCallbackText']]]];
+$keyboard = ['inline_keyboard' => [[['text' =>  '🎬Film🎬', 'url' => 'http://www.google.it']]]];
 $parameters["reply_markup"] = json_encode($keyboard, true);
 echo json_encode($parameters);
 
