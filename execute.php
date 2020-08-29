@@ -25,6 +25,15 @@ if(strpos($text, "/start") === 0 ) {
 	sendMsg($chatId, $response);
 }
 
+header("Content-Type: application/json");
+
+$parameters = array('chat_id' => $chatId, "text" => $text);
+
+$parameters["method"] = "sendMessage";
+$keyboard = ['inline_keyboard' => [[['text' =>  'myText', 'callback_data' => 'myCallbackText']]]];
+$parameters["reply_markup"] = json_encode($keyboard, true);
+echo json_encode($parameters);
+
 function sendMsg($id, $msg) {
 	$token = "1260201015:AAEI-9jc-CEZwyhaMKWTGdSZgPipgysnErk";
 
