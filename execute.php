@@ -25,55 +25,6 @@ if(strpos($text, "/start") === 0 ) {
 	sendMsg($chatId, $response);
 }
 
-function keyboard($tasti, $text, $cd){
-$tasti2 = $tasti;
-    
-$tasti3 = json_encode($tasti2);
-    
-    if(strpos($text, "\n")){
-        $text = urlencode($text);
-    }
-
-apiRequest("sendMessage?text=$text&parse_mode=Markdown&chat_id=$cd&reply_markup=$tasti3");
-}
-
-function inlinekeyboard($menud, $chat, $text){
-$menu = $menud;
-    
-    if(strpos($text, "\n")){
-        $text = urlencode($text);
-    }
-    
-    $d2 = array(
-    "inline_keyboard" => $menu,
-    );
-    
-    $d2 = json_encode($d2);
-    
-    return apiRequest("sendMessage?chat_id=$chat&parse_mode=Markdown&text=$text&reply_markup=$d2");
-}
-
-if($text == "Inline"){
-    $but = array(array(array("text" => "Bottone 1", "url" => "www.google.com"),),);
-    inlineKeyboard($but, $cid, "Clicca questo pulsante per andare su google!");
-}
-
-if($text == "Inline2"){
-    $but = array(array(array("text" => "Bottone 1", "url" => "www.google.com"),array("text" => "Bottone 2", "url" => "www.facebook.it"),),);
-    inlineKeyboard($but, $cid, "Clicca uno di questi due pulsanti \nper andare su google o su facebook!");
-}
-
-if($text == "Inline3"){
-    $but[] = array(array("text" => "Bottone 1", "url" => "www.google.com"),);
-    $but[] = array(array("text" => "Bottone 2", "url" => "www.facebook.it"),);
-    inlineKeyboard($but, $cid, "Clicca uno di questi due pulsanti \nper andare su google o su facebook!");
-}
-
-if($text == "Inline4"){
-    $but = array(array(array("text" => "Bottone 1", "callback_data" => "ciao1"),),);
-    inlineKeyboard($but, $cid, "Clicca il bottone!");
-}
-
 function sendMsg($id, $msg) {
 	$token = "1260201015:AAEI-9jc-CEZwyhaMKWTGdSZgPipgysnErk";
 
