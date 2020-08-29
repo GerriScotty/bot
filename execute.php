@@ -21,7 +21,7 @@ $text = strtolower($text);
 
 $response = "";
 if(strpos($text, "/start") === 0 ) {
-	$response = "Ciao $firstname! \nMi presento, sono il tuo Bot.";
+	$response = "Ciao $firstname! \nBenvenuto sul bot di Aldo Giovanni e Giacomo. Qui potrai trovare film, sketch e la biografia del trio comico più famoso d'Italia.";
 	sendMsg($chatId, $response);
 }
 
