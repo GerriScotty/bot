@@ -27,7 +27,7 @@ $parameters = array('chat_id' => $chatId, "text" => $text);
 $parameters["method"] = "sendMessage";
 $keyboard = ['inline_keyboard' => [[['text' =>  '🎬Film🎬', 'url' => 'https://www.youtube.com']]]];
 $parameters["reply_markup"] = json_encode($keyboard, true);
-
+echo json_encode($parameters);
 
 $response = "";
 if(strpos($text, "/start") === 0 ) {
