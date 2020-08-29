@@ -19,11 +19,6 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
-$response = "";
-if(strpos($text, "/start") === 0 ) {
-	$response = "Ciao $firstname! \nBenvenuto nel bot di Aldo Giovanni e Giacomo. Qui potrai trovare film, sketch e la biografia del trio comico più famoso d'Italia.";
-	sendMsg($chatId, $response);
-}
 
 header("Content-Type: application/json");
 
@@ -33,6 +28,13 @@ $parameters["method"] = "sendMessage";
 $keyboard = ['inline_keyboard' => [[['text' =>  '🎬Film🎬', 'url' => 'http://www.google.it']]]];
 $parameters["reply_markup"] = json_encode($keyboard, true);
 echo json_encode($parameters);
+
+$response = "";
+if(strpos($text, "/start") === 0 ) {
+	$response = "Ciao $firstname! \nBenvenuto nel bot di Aldo Giovanni e Giacomo. Qui potrai trovare film, sketch e la biografia del trio comico più famoso d'Italia.";
+	sendMsg($chatId, $response);
+}
+
 
 function sendMsg($id, $msg) {
 	$token = "1260201015:AAEI-9jc-CEZwyhaMKWTGdSZgPipgysnErk";
