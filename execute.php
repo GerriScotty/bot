@@ -25,6 +25,34 @@ if(strpos($text, "/start") === 0 ) {
 	sendMsg($chatId, $response);
 }
 
+function keyboard($tasti, $text, $cd){
+$tasti2 = $tasti;
+    
+$tasti3 = json_encode($tasti2);
+    
+    if(strpos($text, "\n")){
+        $text = urlencode($text);
+    }
+
+apiRequest("sendMessage?text=$text&parse_mode=Markdown&chat_id=$cd&reply_markup=$tasti3");
+}
+
+function inlinekeyboard($menud, $chat, $text){
+$menu = $menud;
+    
+    if(strpos($text, "\n")){
+        $text = urlencode($text);
+    }
+    
+    $d2 = array(
+    "inline_keyboard" => $menu,
+    );
+    
+    $d2 = json_encode($d2);
+    
+    return apiRequest("sendMessage?chat_id=$chat&parse_mode=Markdown&text=$text&reply_markup=$d2");
+}
+
 function sendMsg($id, $msg) {
 	$token = "1260201015:AAEI-9jc-CEZwyhaMKWTGdSZgPipgysnErk";
 
