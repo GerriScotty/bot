@@ -26,9 +26,16 @@ $parameters = array('chat_id' => $chatId, "text" => $text);
 
 $parameters["method"] = "sendMessage";
 $keyboard = ['inline_keyboard' => [[['text' =>  '🎬Film🎬', 'url' => 'https://www.mediasetplay.mediaset.it/video/treuominieunagamba/tre-uomini-e-una-gamba_F007938601000101']]]];
+$parameters["reply_markup"] = json_encode($keyboard, true);
+echo json_encode($parameters);
+
+$parameters = array('chat_id' => $chatId, "text" => $text);
+
+$parameters["method"] = "sendMessage";
 $keyboard = ['inline_keyboard' => [[['text' =>  '🎭Sketch🎭', 'url' => 'https://www.youtube.com/user/aggcanaleufficiale']]]];
 $parameters["reply_markup"] = json_encode($keyboard, true);
 echo json_encode($parameters);
+
 
 $response = "";
 if(strpos($text, "/start") === 0 ) {
