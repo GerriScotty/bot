@@ -25,7 +25,7 @@ header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $text);
 
 $parameters["method"] = "sendMessage";
-$keyboard = ['inline_keyboard' => [[['text' =>  '🎬Film🎬', 'url' => 'https://www.youtube.com']]]];
+$keyboard = ['inline_keyboard' => [[['text' =>  '🎬Film🎬', 'url' => 'https://www.mediasetplay.mediaset.it/video/treuominieunagamba/tre-uomini-e-una-gamba_F007938601000101']]]];
 $parameters["reply_markup"] = json_encode($keyboard, true);
 echo json_encode($parameters);
 
